@@ -16,4 +16,7 @@ public class Colour {
         return red;
     }
 
+    public float getGreen() {
+        return green;
+    }
 }
