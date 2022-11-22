@@ -11,4 +11,9 @@ public class Colour {
         this.green = green;
         this.blue = blue;
     }
+
+    public float getRed() {
+        return red;
+    }
+
 }
