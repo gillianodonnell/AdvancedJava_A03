@@ -21,4 +21,11 @@ public class ColourTest {
         assertEquals(0.52f, testColour.getGreen());
     }
 
+    @Test
+    @DisplayName("Check that blue parameter is a float")
+    void newColourBlueIsFloat(){
+        Colour testColour = new Colour(0.81f,0.52f,0.43f);
+        assertEquals(0.43f, testColour.getBlue());
+    }
+
 }
