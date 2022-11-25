@@ -8,6 +8,8 @@ public class Colour {
     private float green;
     private float blue;
     private String combinedRGB;
+    private String blueBit;
+
 
     public Colour(float red, float green, float blue) throws IllegalArgumentException{
         //test if red float input is between 0.0 and 1.0
@@ -49,5 +51,13 @@ public class Colour {
 
     public float getBlue() {
         return blue;
+    }
+
+    public String getCombinedRGB() {
+        return combinedRGB;
+    }
+
+    public String getBlueBit() {
+        return blueBit;
     }
 }
