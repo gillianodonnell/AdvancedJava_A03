@@ -90,6 +90,13 @@ public class ColourTest {
         assertEquals(testColour.getGreenBit(), "11111111");
     }
 
+    @Test
+    @DisplayName("Test redBit is last 8 bits")
+    void testRedBit(){
+        Colour testColour = new Colour("000000001111111100000000");
+        assertEquals(testColour.getRedBit(), "00000000");
+    }
+
 
 
 }
