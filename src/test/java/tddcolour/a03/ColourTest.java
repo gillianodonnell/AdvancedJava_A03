@@ -2,8 +2,7 @@ package tddcolour.a03;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.lang.reflect.Executable;
+import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,8 +32,13 @@ public class ColourTest {
     @Test
     @DisplayName("Red input must be between 0.0 and 1.0")
     void testExpectedExceptionForRedFloatRange(){
-       Executable testConstructor = () -> new Colour(5,.4f,.1f);
-       assertThrows(IllegalArgumentException.class, testConstructor, "Invalid red float input");
+       assertThrows(IllegalArgumentException.class, new Executable() {
+           @Override
+           public void execute() throws Throwable {
+               Colour colour = new Colour(5,0.4f,.5f);
+           }
+       });
+
     }
 
 }
