@@ -2,6 +2,7 @@ package tddcolour.a03;
 
 
 import java.lang.reflect.Executable;
+import java.lang.String;
 
 public class Colour {
     private float red;
@@ -38,8 +39,16 @@ public class Colour {
     }
 
     public Colour(String combinedRGB) throws IllegalArgumentException{
+        //checks that length of rgb is 24
         if(combinedRGB.length() != 24){
             throw new IllegalArgumentException("RGB length not 24");
+        }
+        //creates char and iterates through combinedRGB to see if values are 1 or 0 and if not then an exception is thrown
+        char[] rgb = combinedRGB.toCharArray();
+        for(int bitValue = 0; bitValue < rgb.length; bitValue++){
+            if(rgb[bitValue] != '1' || rgb[bitValue] != '0'){
+                throw new IllegalArgumentException("combinedRGB only takes values 1 or 0");
+            }
         }
         this.combinedRGB = combinedRGB;
         this.blueBit = combinedRGB.substring(0,8);
