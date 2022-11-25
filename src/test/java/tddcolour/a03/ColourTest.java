@@ -65,4 +65,16 @@ public class ColourTest {
 
     }
 
+    @Test
+    @DisplayName("String RGB input should be of length 24")
+    void testRGBLength(){
+        assertThrows(IllegalArgumentException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                Colour colour = new Colour("10010101");
+            }
+        });
+    }
+    }
+
 }
