@@ -33,7 +33,7 @@ public class ColourTest {
     @Test
     @DisplayName("Red input must be between 0.0 and 1.0")
     void testExpectedExceptionForRedFloatRange(){
-       Executable testConstructor = () -> new Colour(5,.4,.1);
+       Executable testConstructor = () -> new Colour(5,.4f,.1f);
        assertThrows(IllegalArgumentException.class, testConstructor, "Invalid red float input");
     }
 
