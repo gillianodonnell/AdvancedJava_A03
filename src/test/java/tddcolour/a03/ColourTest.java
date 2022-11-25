@@ -41,4 +41,16 @@ public class ColourTest {
 
     }
 
+    @Test
+    @DisplayName("Green input must be between 0.0 and 1.0")
+    void testExpectedExceptionForGreenFloatRange(){
+        assertThrows(IllegalArgumentException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                Colour colour = new Colour(.6f,8,.5f);
+            }
+        });
+
+    }
+
 }
