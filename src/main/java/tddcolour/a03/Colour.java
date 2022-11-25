@@ -4,9 +4,10 @@ package tddcolour.a03;
 import java.lang.reflect.Executable;
 
 public class Colour {
-    private final float red;
-    private final float green;
-    private final float blue;
+    private float red;
+    private float green;
+    private float blue;
+    private String combinedRGB;
 
     public Colour(float red, float green, float blue) throws IllegalArgumentException{
         //test if red float input is between 0.0 and 1.0
@@ -29,6 +30,13 @@ public class Colour {
         this.green = green;
         this.blue = blue;
 
+    }
+
+    public Colour(String combinedRGB) throws IllegalArgumentException{
+        if(combinedRGB.length() != 24){
+            throw new IllegalArgumentException("RGB length not 24");
+        }
+        this.combinedRGB = combinedRGB;
     }
 
     public float getRed() {
