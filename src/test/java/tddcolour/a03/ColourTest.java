@@ -97,6 +97,17 @@ public class ColourTest {
         assertEquals(testColour.getRedBit(), "00000000");
     }
 
+    @Test
+    @DisplayName("Test that values into combinedRGB are 1s or 0s")
+    void testRGBValues(){
+        assertThrows(IllegalArgumentException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                Colour newColour = new Colour("222222222222222222222222");
+            }
+        });
+    }
+
 
 
 }
