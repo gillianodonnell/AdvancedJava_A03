@@ -71,10 +71,21 @@ public class ColourTest {
         assertThrows(IllegalArgumentException.class, new Executable() {
             @Override
             public void execute() throws Throwable {
-                Colour colour = new Colour("10010101");
+                Colour newColour = new Colour("10010101");
             }
         });
     }
+
+    @Test
+    @DisplayName("Test blueBit is first 8 bits")
+    void testBlueBit(){
+        Colour testColour = new Colour("000000001111111100000000");
+        assertEquals(testColour.getBlue(), "00000000");
     }
 
+
+
 }
+
+
+
