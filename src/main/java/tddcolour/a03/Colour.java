@@ -10,6 +10,7 @@ public class Colour {
     private String combinedRGB;
     private String blueBit;
     private String greenBit;
+    private String redBit;
 
 
 
@@ -43,6 +44,7 @@ public class Colour {
         this.combinedRGB = combinedRGB;
         this.blueBit = combinedRGB.substring(0,8);
         this.greenBit = combinedRGB.substring(8,16);
+        this.redBit = combinedRGB.substring(16,24);
     }
 
     public float getRed() {
@@ -62,12 +64,17 @@ public class Colour {
     }
 
     public String getBlueBit() {
-        blueBit = combinedRGB.substring(0,8);
         return blueBit;
     }
 
     public String getGreenBit() {
         return greenBit;
     }
+
+    public String getRedBit() {
+        return redBit;
+    }
+
+
 
 }
