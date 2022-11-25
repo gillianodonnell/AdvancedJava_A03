@@ -41,6 +41,8 @@ public class Colour {
             throw new IllegalArgumentException("RGB length not 24");
         }
         this.combinedRGB = combinedRGB;
+        this.blueBit = combinedRGB.substring(0,8);
+        this.greenBit = combinedRGB.substring(8,16);
     }
 
     public float getRed() {
