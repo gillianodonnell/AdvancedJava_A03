@@ -58,6 +58,7 @@ public class Colour {
     }
 
     public String getBlueBit() {
+        blueBit = combinedRGB.substring(0,8);
         return blueBit;
     }
 }
