@@ -9,6 +9,8 @@ public class Colour {
     private float blue;
     private String combinedRGB;
     private String blueBit;
+    private String greenBit;
+
 
 
     public Colour(float red, float green, float blue) throws IllegalArgumentException{
@@ -61,4 +63,9 @@ public class Colour {
         blueBit = combinedRGB.substring(0,8);
         return blueBit;
     }
+
+    public String getGreenBit() {
+        return greenBit;
+    }
+
 }
