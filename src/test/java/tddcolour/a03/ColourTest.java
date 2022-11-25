@@ -80,7 +80,14 @@ public class ColourTest {
     @DisplayName("Test blueBit is first 8 bits")
     void testBlueBit(){
         Colour testColour = new Colour("000000001111111100000000");
-        assertEquals(testColour.getBlue(), "00000000");
+        assertEquals(testColour.getBlueBit(), "00000000");
+    }
+
+    @Test
+    @DisplayName("Test greenBit is middle 8 bits")
+    void testGreenBit(){
+        Colour testColour = new Colour("000000001111111100000000");
+        assertEquals(testColour.getGreenBit(), "11111111");
     }
 
 
