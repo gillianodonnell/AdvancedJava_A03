@@ -113,15 +113,18 @@ public class ColourTest {
     }
 
     @Test
-    @DisplayName("Test that green is now a decimal")
+    @DisplayName("Test that green bit is now a decimal")
     void testGreenBitDecimal(){
         Colour testColour = new Colour("100101111111111100000000");
         assertEquals(testColour.getGreenBitDecimal(),1.0f);
     }
 
-
-
-
+    @Test
+    @DisplayName("Test that red bit is now a decimal")
+    void testRedBitDecimal(){
+        Colour testColour = new Colour("100101111111111100000000");
+        assertEquals(testColourfa.getRedBitDecimal(),1.0f);
+    }
 
 }
 
