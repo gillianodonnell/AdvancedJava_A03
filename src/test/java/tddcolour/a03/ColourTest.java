@@ -105,6 +105,15 @@ public class ColourTest {
         });
     }
 
+    @Test
+    @DisplayName("Test that blue is now a decimal")
+    void testBlueBitDecimal(){
+        Colour testColour = new Colour("100101111111111100000000");
+        assertEquals(testColour.getBlueBitDecimal(), 0.592156827f);
+    }
+
+
+
 
 
 }
