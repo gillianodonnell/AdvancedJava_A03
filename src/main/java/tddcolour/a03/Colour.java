@@ -13,6 +13,7 @@ public class Colour {
     private String redBit;
     private float blueBitDecimal;
     private float greenBitDecimal;
+    private float redBitDecimal;
 
 
     public Colour(float red, float green, float blue) throws IllegalArgumentException {
@@ -54,6 +55,7 @@ public class Colour {
         //converts blueBit into float
         this.blueBitDecimal = convertBinaryToFloat(blueBit);
         this.greenBitDecimal = convertBinaryToFloat(greenBit);
+        this.redBitDecimal = convertBinaryToFloat(redBit);
     }
 
     public float getRed() {
@@ -106,5 +108,9 @@ public class Colour {
 
     public float getGreenBitDecimal() {
         return greenBitDecimal;
+    }
+
+    public float getRedBitDecimal() {
+        return redBitDecimal;
     }
 }
