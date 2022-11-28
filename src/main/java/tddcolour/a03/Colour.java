@@ -12,6 +12,7 @@ public class Colour {
     private String blueBit;
     private String greenBit;
     private String redBit;
+    private float blueBitDecimal;
 
 
 
@@ -44,16 +45,19 @@ public class Colour {
             throw new IllegalArgumentException("RGB length not 24");
         }
         //creates char and iterates through combinedRGB to see if values are 1 or 0 and if not then an exception is thrown
-        char[] rgb = combinedRGB.toCharArray();
-        for(int bitValue = 0; bitValue < rgb.length; bitValue++){
-            if(rgb[bitValue] != '1' || rgb[bitValue] != '0'){
-                throw new IllegalArgumentException("combinedRGB only takes values 1 or 0");
-            }
-        }
+        //        char[] rgb = combinedRGB.toCharArray();
+        //        for(int bitValue = 0; bitValue < rgb.length; bitValue++){
+        //            if(rgb[bitValue] != '1' || rgb[bitValue] != '0'){
+        //                throw new IllegalArgumentException("combinedRGB only takes values 1 or 0");
+        //            }
+        //        }
         this.combinedRGB = combinedRGB;
+        //string slices 24 bit string into first 8 bits, middle 8 bits and last 8 bits
         this.blueBit = combinedRGB.substring(0,8);
         this.greenBit = combinedRGB.substring(8,16);
         this.redBit = combinedRGB.substring(16,24);
+        //converts blueBit into float
+        this.blueBitDecimal = convertBinaryToFloat(blueBit);
     }
 
     public float getRed() {
@@ -84,6 +88,13 @@ public class Colour {
         return redBit;
     }
 
+    public float convertBinaryToFloat(String binaryString){
+        float numerator = Integer.parseInt(binaryString,2);
+        float decimal = numerator/255;
+        return decimal;
+    }
 
-
+    public float getBlueBitDecimal() {
+        return blueBitDecimal;
+    }
 }
