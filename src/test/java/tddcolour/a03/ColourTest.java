@@ -123,7 +123,7 @@ public class ColourTest {
     @DisplayName("Test that red bit is now a decimal")
     void testRedBitDecimal(){
         Colour testColour = new Colour("100101111111111100000000");
-        assertEquals(testColourfa.getRedBitDecimal(),1.0f);
+        assertEquals(testColour.getRedBitDecimal(),1.0f);
     }
 
 }
