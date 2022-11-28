@@ -1,7 +1,6 @@
 package tddcolour.a03;
 
 
-import java.lang.reflect.Executable;
 import java.lang.String;
 
 public class Colour {
@@ -15,20 +14,19 @@ public class Colour {
     private float blueBitDecimal;
 
 
-
-    public Colour(float red, float green, float blue) throws IllegalArgumentException{
+    public Colour(float red, float green, float blue) throws IllegalArgumentException {
         //test if red float input is between 0.0 and 1.0
-        if(red < 0.0f || red > 1.0f){
+        if (red < 0.0f || red > 1.0f) {
             throw new IllegalArgumentException("Red input must be between 0.0f and 1.0f");
         }
 
         //test if green float input is between 0.0 and 1.0
-        if(green < 0.0f || green > 1.0f){
+        if (green < 0.0f || green > 1.0f) {
             throw new IllegalArgumentException("Green input must be between 0.0f and 1.0f");
         }
 
         //test if blue float input is between 0.0 and 1.0
-        if(blue < 0.0f || blue > 1.0f){
+        if (blue < 0.0f || blue > 1.0f) {
             throw new IllegalArgumentException("Blue input must be between 0.0f and 1.0f");
         }
 
@@ -39,23 +37,19 @@ public class Colour {
 
     }
 
-    public Colour(String combinedRGB) throws IllegalArgumentException{
+    public Colour(String combinedRGB) throws IllegalArgumentException {
         //checks that length of rgb is 24
-        if(combinedRGB.length() != 24){
+        if (combinedRGB.length() != 24) {
             throw new IllegalArgumentException("RGB length not 24");
         }
-        //creates char and iterates through combinedRGB to see if values are 1 or 0 and if not then an exception is thrown
-        //        char[] rgb = combinedRGB.toCharArray();
-        //        for(int bitValue = 0; bitValue < rgb.length; bitValue++){
-        //            if(rgb[bitValue] != '1' || rgb[bitValue] != '0'){
-        //                throw new IllegalArgumentException("combinedRGB only takes values 1 or 0");
-        //            }
-        //        }
+        if (validBit(combinedRGB) != true) {
+            throw new IllegalArgumentException("RGB values must be 1 or 0");
+        }
         this.combinedRGB = combinedRGB;
         //string slices 24 bit string into first 8 bits, middle 8 bits and last 8 bits
-        this.blueBit = combinedRGB.substring(0,8);
-        this.greenBit = combinedRGB.substring(8,16);
-        this.redBit = combinedRGB.substring(16,24);
+        this.blueBit = combinedRGB.substring(0, 8);
+        this.greenBit = combinedRGB.substring(8, 16);
+        this.redBit = combinedRGB.substring(16, 24);
         //converts blueBit into float
         this.blueBitDecimal = convertBinaryToFloat(blueBit);
     }
@@ -88,13 +82,23 @@ public class Colour {
         return redBit;
     }
 
-    public float convertBinaryToFloat(String binaryString){
-        float numerator = Integer.parseInt(binaryString,2);
-        float decimal = numerator/255;
+    public float convertBinaryToFloat(String binaryString) {
+        float numerator = Integer.parseInt(binaryString, 2);
+        float decimal = numerator / 255;
         return decimal;
     }
 
     public float getBlueBitDecimal() {
         return blueBitDecimal;
+    }
+
+    boolean validBit(String bitString) {
+        char[] ch = bitString.toCharArray();
+        for(int i = 0; i < ch.length; i++) {
+            if (ch[i] == '1' || ch[i] == '0') {
+                return (true);
+            }
+        }
+        return false;
     }
 }
