@@ -101,7 +101,16 @@ public class ColourTest {
         assertEquals(testColour.getBlueBitDecimal(),0.5921569f);
     }
 
-
+    @Test
+    @DisplayName("Test that all characters in combined rgb are 0 or 1")
+    void testCombinedRGBBitValues(){
+        assertThrows(IllegalArgumentException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                Colour newColour = new Colour("222222222222222364738973");
+            }
+        });
+    }
 
 
 
