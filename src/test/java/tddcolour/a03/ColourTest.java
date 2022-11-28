@@ -95,21 +95,10 @@ public class ColourTest {
     }
 
     @Test
-    @DisplayName("Test that values into combinedRGB are 1s or 0s")
-    void testRGBValues(){
-        assertThrows(IllegalArgumentException.class, new Executable() {
-            @Override
-            public void execute() throws Throwable {
-                Colour newColour = new Colour("222222222222222222222222");
-            }
-        });
-    }
-
-    @Test
     @DisplayName("Test that blue is now a decimal")
     void testBlueBitDecimal(){
         Colour testColour = new Colour("100101111111111100000000");
-        assertEquals(testColour.getBlueBitDecimal(), 0.592156827f);
+        assertEquals(testColour.getBlueBitDecimal(),0.5921569f);
     }
 
 
