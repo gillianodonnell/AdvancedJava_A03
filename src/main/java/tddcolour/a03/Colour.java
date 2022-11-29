@@ -113,4 +113,8 @@ public class Colour {
     public float getRedBitDecimal() {
         return redBitDecimal;
     }
+
+    public float makeColour(float blueBit, float greenBit, float redBit){
+        return blueBit * greenBit * redBit;
+    }
 }
