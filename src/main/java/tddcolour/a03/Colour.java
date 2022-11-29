@@ -195,7 +195,7 @@ public class Colour {
     }
 
     /**
-     *
+     * Method to make a colour using float values
      * @param blueBit blue float value between 0.0 and 1.0
      * @param greenBit green float value between 0.0 and 1.0
      * @param redBit red float value between 0.0 and 1.0
