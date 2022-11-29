@@ -126,6 +126,23 @@ public class ColourTest {
         assertEquals(testColour.getRedBitDecimal(),0.0f);
     }
 
+    @Test
+    @DisplayName("Test if the colours are equal")
+    void testEqualColours(){
+        Colour firstColour = new Colour("100101111111111100000000");
+        Colour secondColour = new Colour("100101111111111100000000");
+        float firstBlueColour = firstColour.getBlueBitDecimal();
+        float firstGreenColour = firstColour.getGreenBitDecimal();
+        float firstRedColour = firstColour.getRedBitDecimal();
+        float firstColourFloat = firstBlueColour * firstGreenColour * firstRedColour;
+        float secondBlueColour = secondColour.getBlueBitDecimal();
+        float secondGreenColour = secondColour.getGreenBitDecimal();
+        float secondRedColour = secondColour.getRedBitDecimal();
+        float secondColourFloat = secondRedColour * secondBlueColour * secondGreenColour;
+        assertEquals(firstColourFloat,secondColourFloat);
+
+    }
+
 }
 
 
