@@ -19,7 +19,6 @@ public class Colour {
     private float red;
     private float green;
     private float blue;
-    private String combinedRGB;
     private String blueBit;
     private String greenBit;
     private String redBit;
@@ -72,10 +71,9 @@ public class Colour {
         if (combinedRGB.length() != 24) {
             throw new IllegalArgumentException("RGB length not 24");
         }
-        if (validBit(combinedRGB) != true) {
+        if (!validBit(combinedRGB)) {
             throw new IllegalArgumentException("RGB values must be 1 or 0");
         }
-        this.combinedRGB = combinedRGB;
         //string slices 24 bit string into first 8 bits, middle 8 bits and last 8 bits
         this.blueBit = combinedRGB.substring(0, 8);
         this.greenBit = combinedRGB.substring(8, 16);
@@ -111,16 +109,6 @@ public class Colour {
     }
 
     /**
-     * Getter for 3 parameter Colour constructor
-     * @return combinedRGB one parameter which is a combined RGB value
-     * consisting of the red component in bits 16-23, the green component in bits 8-15, and the blue
-     * component in bits 0-7
-     */
-    public String getCombinedRGB() {
-        return combinedRGB;
-    }
-
-    /**
      * Getter for 1 parameter Colour constructor
      * @return string blue component in bits 0-7
      */
@@ -151,8 +139,7 @@ public class Colour {
      */
     public float convertBinaryToFloat(String binaryString) {
         float numerator = Integer.parseInt(binaryString, 2);
-        float decimal = numerator / 255;
-        return decimal;
+        return numerator / 255;
     }
 
     /**
@@ -169,9 +156,9 @@ public class Colour {
      * @return boolean
      */
     boolean validBit(String bitString) {
-        char[] ch = bitString.toCharArray();
-        for(int i = 0; i < ch.length; i++) {
-            if (ch[i] == '1' || ch[i] == '0') {
+        char[] binary = bitString.toCharArray();
+        for (char bitValue : binary) {
+            if (bitValue == '1' || bitValue == '0') {
                 return (true);
             }
         }
