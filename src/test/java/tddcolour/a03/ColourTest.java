@@ -127,7 +127,7 @@ public class ColourTest {
     }
 
     @Test
-    @DisplayName("Test if the colours are equal")
+    @DisplayName("Test if the colours are equal when inputted same bit string")
     void testEqualColours(){
         Colour firstColour = new Colour("100101111111111100000000");
         Colour secondColour = new Colour("100101111111111100000000");
@@ -140,6 +140,34 @@ public class ColourTest {
         float secondRedColour = secondColour.getRedBitDecimal();
         float secondColourFloat = secondRedColour * secondBlueColour * secondGreenColour;
         assertEquals(firstColourFloat,secondColourFloat);
+
+    }
+
+    @Test
+    @DisplayName("Test if the colours are equal when inputted same bit values but in different order")
+    void testEqualColoursEqualDifferentOrder(){
+        Colour firstColour = new Colour("000000001001011111111111"); //10010111 //11111111
+        Colour secondColour = new Colour("100101111111111100000000");
+        float firstBlueColour = firstColour.getBlueBitDecimal();
+        float firstGreenColour = firstColour.getGreenBitDecimal();
+        float firstRedColour = firstColour.getRedBitDecimal();
+        float firstColourFloat = firstBlueColour * firstGreenColour * firstRedColour;
+        float secondBlueColour = secondColour.getBlueBitDecimal();
+        float secondGreenColour = secondColour.getGreenBitDecimal();
+        float secondRedColour = secondColour.getRedBitDecimal();
+        float secondColourFloat = secondRedColour * secondBlueColour * secondGreenColour;
+        assertEquals(firstColourFloat,secondColourFloat);
+
+    }
+
+    @Test
+    @DisplayName("Test if the two constructors make the same colour using makeColour method")
+    void testEqualColoursEqualDifferentConstructors(){
+        Colour firstColour = new Colour(.3921568627f,.156827451f,.0431372549f);
+        Colour secondColour = new Colour("100101111111111100000000");
+        float createFirstColour = firstColour.makeColour(firstColour.getBlue(),firstColour.getGreen(),firstColour.getRed());
+        float createSecondColour = secondColour.makeColour(secondColour.getBlueBitDecimal(),secondColour.getGreenBitDecimal(),secondColour.getRedBitDecimal());
+        assertEquals(createFirstColour,createSecondColour);
 
     }
 
