@@ -129,8 +129,8 @@ public class ColourTest {
     @Test
     @DisplayName("Test if the colours are equal when inputted same bit string")
     void testEqualColours(){
-        Colour firstColour = new Colour("100101111111111100000000");
-        Colour secondColour = new Colour("100101111111111100000000");
+        Colour firstColour = new Colour("100101111111111100000011");
+        Colour secondColour = new Colour("100101111111111100000011");
         float firstBlueColour = firstColour.getBlueBitDecimal();
         float firstGreenColour = firstColour.getGreenBitDecimal();
         float firstRedColour = firstColour.getRedBitDecimal();
@@ -163,12 +163,11 @@ public class ColourTest {
     @Test
     @DisplayName("Test if the two constructors make the same colour using makeColour method")
     void testEqualColoursEqualDifferentConstructors(){
-        Colour firstColour = new Colour(.3921568627f,.156827451f,.0431372549f);
+        Colour firstColour = new Colour(.3921568627f,.156827451f,.0f);
         Colour secondColour = new Colour("100101111111111100000000");
         float createFirstColour = firstColour.makeColour(firstColour.getBlue(),firstColour.getGreen(),firstColour.getRed());
         float createSecondColour = secondColour.makeColour(secondColour.getBlueBitDecimal(),secondColour.getGreenBitDecimal(),secondColour.getRedBitDecimal());
-        assertEquals(createFirstColour,createSecondColour);
-
+        assertEquals(createSecondColour,createFirstColour);
     }
 
 }
