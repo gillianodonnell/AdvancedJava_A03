@@ -180,6 +180,17 @@ public class ColourTest {
     }
 
     /**
+     * Unit test to test that all characters in binary string in combined rgb are either 0 or 1
+     */
+    @Test
+    @DisplayName("Test that all string bit values in combined rgb are 0 or 1.")
+    void testValidCombinedRGBBitValues(){
+        //create instance of 1 parameter Colour object with binary string input
+        Colour testColour = new Colour("100101111111111100000011");
+        assertTrue(testColour.validBit("100101111111111100000011"));
+    }
+
+    /**
      * Test if the colours are equal; compare component values
      */
     @Test

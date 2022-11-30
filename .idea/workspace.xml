@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0116cbea-3ce8-4e8b-b617-6079aaaa1fc6" name="Changes" comment="Refactored Colour class methods">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tddcolour/a03/Colour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tddcolour/a03/Colour.java" afterDir="false" />
+    <list default="true" id="0116cbea-3ce8-4e8b-b617-6079aaaa1fc6" name="Changes" comment="Committed all changed files pom.xml, misc.xml, vcs.xml and workspace.xml, encodings.xml, .gitignore">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tddcolour/a03/ColourTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tddcolour/a03/ColourTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,14 +32,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ToolWindowGit.ShowToolbar": "false"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.ColourTest.testEqualColoursEqualDifferentConstructors">
+}]]></component>
+  <component name="RunManager" selected="JUnit.ColourTest.testValidCombinedRGBBitValues">
     <configuration name="ColourTest.testCombinedRGBBitValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AdvancedJava_A03" />
       <extension name="coverage">
@@ -110,7 +105,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColourTest.testRGBLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ColourTest.testValidCombinedRGBBitValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AdvancedJava_A03" />
       <extension name="coverage">
         <pattern>
@@ -120,7 +115,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tddcolour.a03" />
       <option name="MAIN_CLASS_NAME" value="tddcolour.a03.ColourTest" />
-      <option name="METHOD_NAME" value="testRGBLength" />
+      <option name="METHOD_NAME" value="testValidCombinedRGBBitValues" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,11 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ColourTest.testValidCombinedRGBBitValues" />
         <item itemvalue="JUnit.ColourTest.testEqualColoursEqualDifferentConstructors" />
         <item itemvalue="JUnit.ColourTest.testEqualColoursBitsInDifferentOrder" />
         <item itemvalue="JUnit.ColourTest.testCombinedRGBBitValues" />
         <item itemvalue="JUnit.ColourTest.testEqualColours" />
-        <item itemvalue="JUnit.ColourTest.testRGBLength" />
       </list>
     </recent_temporary>
   </component>
@@ -144,55 +139,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669113067831</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Failing test to check that red parameter is of float type">
-      <created>1669136332148</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1669136332149</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Fixed constructor error warning by initialising variables and creating constructor for Colour">
-      <created>1669137712603</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1669137712603</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Made getter for red variable">
-      <created>1669137850729</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1669137850729</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Test passed, changed assertTrue to assertEquals to check that 0.81f is equal to red. This makes sure that red is a float.">
-      <created>1669138483241</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1669138483241</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Test failing as no getter for green">
-      <created>1669138656325</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1669138656325</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Test passed as getter for green">
-      <created>1669138714027</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1669138714027</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Test failing as no getter for blue">
-      <created>1669138795493</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1669138795493</updated>
     </task>
     <task id="LOCAL-00008" summary="Test passed as getter for blue">
       <created>1669138858848</created>
@@ -488,7 +434,56 @@
       <option name="project" value="LOCAL" />
       <updated>1669735699782</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="created java doc for all tests">
+      <created>1669810297050</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1669810297051</updated>
+    </task>
+    <task id="LOCAL-00051" summary="wrote comments in unit tests">
+      <created>1669810360041</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1669810360041</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Made test names more descriptive">
+      <created>1669810396176</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1669810396176</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Test passed for checking if colours were the same only by checking components. Deleted makeColour method.">
+      <created>1669810452724</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1669810452724</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Added comments for Colour class">
+      <created>1669810510691</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1669810510691</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Removed makeColours method as not needed">
+      <created>1669810531847</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1669810531847</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Committed all changed files pom.xml, misc.xml, vcs.xml and workspace.xml, encodings.xml, .gitignore">
+      <created>1669810649497</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1669810649497</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -515,13 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="made getters for blueBit and combinedRGB" />
-    <MESSAGE value="test passed for testing that the blueBit is the first 8 characters of combinedRGB string. Used string slicing to assign characters to blueBit" />
-    <MESSAGE value="test failed for testing that the greenBit is the middle 8 characters of combinedRGB string. will need to initialise greenBit, make getter and use string slicing to assign characters to greenBit" />
-    <MESSAGE value="added private variable greenBit and getter for encapsulation" />
-    <MESSAGE value="Test passed for checking that greenBit is middle 8 characters. Moved blueBit and greenBit into constructor" />
-    <MESSAGE value="Test failed for checking redBit values" />
-    <MESSAGE value="Test passed for checking redBit values are last 8 bits. Made getter for redBit and implemented string slicing in constructor" />
     <MESSAGE value="Test failed for checking if values in combinedRGB are 1 or 0. Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown." />
     <MESSAGE value="Test passed for checking if values in combinedRGB are 1 or 0. Created char and iterates through combinedRGB to see if values are 1 or 0 and if not then an exception is thrown" />
     <MESSAGE value="anonymous Executable() replaced with lambda" />
@@ -540,6 +528,18 @@
     <MESSAGE value="Java doc for Colour Class" />
     <MESSAGE value="Java doc for making a colour" />
     <MESSAGE value="Refactored Colour class methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored Colour class methods" />
+    <MESSAGE value="created java doc for all tests" />
+    <MESSAGE value="wrote comments in unit tests" />
+    <MESSAGE value="Made test names more descriptive" />
+    <MESSAGE value="Test passed for checking if colours were the same only by checking components. Deleted makeColour method." />
+    <MESSAGE value="Added comments for Colour class" />
+    <MESSAGE value="Removed makeColours method as not needed" />
+    <MESSAGE value="Committed all changed files pom.xml, misc.xml, vcs.xml and workspace.xml, encodings.xml, .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Committed all changed files pom.xml, misc.xml, vcs.xml and workspace.xml, encodings.xml, .gitignore" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AdvancedJava_A03$ColourTest_testEqualColoursEqualDifferentConstructors.ic" NAME="ColourTest.testEqualColoursEqualDifferentConstructors Coverage Results" MODIFIED="1669815506974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tddcolour.a03.*</FILTER>
+    </SUITE>
   </component>
 </project>
