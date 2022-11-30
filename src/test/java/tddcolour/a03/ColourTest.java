@@ -191,15 +191,10 @@ public class ColourTest {
         //create second instance of 1 parameter Colour object with binary string input
         //first combined rgb given as a binary string with same 8 bit ranges but in different order
         Colour secondColour = new Colour("100101111111111100000011");
-        float firstBlueColour = firstColour.getBlueBitDecimal();
-        float firstGreenColour = firstColour.getGreenBitDecimal();
-        float firstRedColour = firstColour.getRedBitDecimal();
-        float firstColourFloat = firstBlueColour * firstGreenColour * firstRedColour;
-        float secondBlueColour = secondColour.getBlueBitDecimal();
-        float secondGreenColour = secondColour.getGreenBitDecimal();
-        float secondRedColour = secondColour.getRedBitDecimal();
-        float secondColourFloat = secondRedColour * secondBlueColour * secondGreenColour;
-        assertEquals(firstColourFloat,secondColourFloat);
+        //colours should be equal as they have the same components
+        assertEquals(firstColour.getBlueBitDecimal(),secondColour.getBlueBitDecimal());
+        assertEquals(firstColour.getGreenBitDecimal(),secondColour.getGreenBitDecimal());
+        assertEquals(firstColour.getRedBitDecimal(),secondColour.getRedBitDecimal());
 
     }
 
