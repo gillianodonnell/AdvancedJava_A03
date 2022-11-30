@@ -16,6 +16,7 @@ public class ColourTest {
     @Test
     @DisplayName("Check that red parameter is a float")
     void newColourRedIsFloat(){
+        //create instance of 3 parameter Colour object
         Colour testColour = new Colour(0.81f,0.52f,0.43f);
         assertEquals(0.81f, testColour.getRed());
     }
@@ -26,6 +27,7 @@ public class ColourTest {
     @Test
     @DisplayName("Check that green parameter is a float")
     void newColourGreenIsFloat(){
+        //create instance of 3 parameter Colour object
         Colour testColour = new Colour(0.81f,0.52f,0.43f);
         assertEquals(0.52f, testColour.getGreen());
     }
@@ -36,6 +38,7 @@ public class ColourTest {
     @Test
     @DisplayName("Check that blue parameter is a float")
     void newColourBlueIsFloat(){
+        //create instance of 3 parameter Colour object
         Colour testColour = new Colour(0.81f,0.52f,0.43f);
         assertEquals(0.43f, testColour.getBlue());
     }
@@ -46,7 +49,9 @@ public class ColourTest {
     @Test
     @DisplayName("Red input must be between 0.0 and 1.0")
     void testExpectedExceptionForRedFloatRange(){
+        //IllegalArgumentException should be thrown
        assertThrows(IllegalArgumentException.class, () -> {
+           //create instance of 3 parameter Colour object
            Colour colour = new Colour(5,0.4f,.5f);
        });
 
@@ -58,11 +63,9 @@ public class ColourTest {
     @Test
     @DisplayName("Green input must be between 0.0 and 1.0")
     void testExpectedExceptionForGreenFloatRange(){
-        assertThrows(IllegalArgumentException.class, new Executable() {
-            @Override
-            public void execute() throws Throwable {
-                Colour colour = new Colour(.6f,8,.5f);
-            }
+        assertThrows(IllegalArgumentException.class, () -> {
+            //create instance of 3 parameter Colour object
+            Colour colour = new Colour(.6f,8,.5f);
         });
 
     }
@@ -73,13 +76,11 @@ public class ColourTest {
     @Test
     @DisplayName("Blue input must be between 0.0 and 1.0")
     void testExpectedExceptionForBlueFloatRange(){
-        assertThrows(IllegalArgumentException.class, new Executable() {
-            @Override
-            public void execute() throws Throwable {
-                Colour colour = new Colour(.6f,.8f,9);
-            }
+        //using lambda function
+        assertThrows(IllegalArgumentException.class, () -> {
+            //create instance of 3 parameter Colour object
+            Colour colour = new Colour(.6f,.8f,9);
         });
-
     }
 
     /**
@@ -89,11 +90,10 @@ public class ColourTest {
     @Test
     @DisplayName("String RGB input should be of length 24")
     void testRGBLength(){
-        assertThrows(IllegalArgumentException.class, new Executable() {
-            @Override
-            public void execute() throws Throwable {
-                Colour newColour = new Colour("10010101");
-            }
+        //Anonymous new Executable() was replaced with lambda
+        assertThrows(IllegalArgumentException.class, () -> {
+            //create instance of 1 parameter Colour object with binary string input
+            Colour testColour = new Colour("10010101");
         });
     }
 
@@ -104,6 +104,7 @@ public class ColourTest {
     @Test
     @DisplayName("Test blueBit is first 8 bits")
     void testBlueBit(){
+        //create instance of 1 parameter Colour object with binary string input
         Colour testColour = new Colour("000000001111111100000000");
         assertEquals(testColour.getBlueBit(), "00000000");
     }
@@ -115,6 +116,7 @@ public class ColourTest {
     @Test
     @DisplayName("Test greenBit is middle 8 bits")
     void testGreenBit(){
+        //create instance of 1 parameter Colour object with binary string input
         Colour testColour = new Colour("000000001111111100000000");
         assertEquals(testColour.getGreenBit(), "11111111");
     }
@@ -126,6 +128,7 @@ public class ColourTest {
     @Test
     @DisplayName("Test redBit is last 8 bits")
     void testRedBit(){
+        //create instance of 1 parameter Colour object with binary string input
         Colour testColour = new Colour("000000001111111100000000");
         assertEquals(testColour.getRedBit(), "00000000");
     }
@@ -136,6 +139,7 @@ public class ColourTest {
     @Test
     @DisplayName("Test that blue is now a decimal")
     void testBlueBitDecimal(){
+        //create instance of 1 parameter Colour object with binary string input
         Colour testColour = new Colour("100101111111111100000000");
         assertEquals(testColour.getBlueBitDecimal(),0.5921569f);
     }
@@ -169,11 +173,9 @@ public class ColourTest {
     @Test
     @DisplayName("Test that all characters in combined rgb are 0 or 1")
     void testCombinedRGBBitValues(){
-        assertThrows(IllegalArgumentException.class, new Executable() {
-            @Override
-            public void execute() throws Throwable {
-                Colour newColour = new Colour("222222222222222364738973");
-            }
+        assertThrows(IllegalArgumentException.class, () -> {
+            //create instance of 1 parameter Colour object with binary string input
+            Colour testColour = new Colour("222222222222222364738973");
         });
     }
 
@@ -181,9 +183,13 @@ public class ColourTest {
      * Test if the colours are equal; compare component values
      */
     @Test
-    @DisplayName("Test if the colours are equal when inputted same bit string")
-    void testEqualColours(){
+    @DisplayName("Test if the colours are equal when inputted similar binary string with equal ranges in different order")
+    void testEqualColoursBitsInDifferentOrder(){
+        //create first instance of 1 parameter Colour object with binary string input
+        //first combined rgb given as a binary string
         Colour firstColour = new Colour("100101111111111100000011");
+        //create second instance of 1 parameter Colour object with binary string input
+        //first combined rgb given as a binary string with same 8 bit ranges but in different order
         Colour secondColour = new Colour("100101111111111100000011");
         float firstBlueColour = firstColour.getBlueBitDecimal();
         float firstGreenColour = firstColour.getGreenBitDecimal();
@@ -205,11 +211,14 @@ public class ColourTest {
     @Test
     @DisplayName("Test if the two constructors make the same colour using makeColour method")
     void testEqualColoursEqualDifferentConstructors(){
-        Colour firstColour = new Colour(.3921568627f,.156827451f,.0f);
-        Colour secondColour = new Colour("100101111111111100000000");
-        float createFirstColour = firstColour.makeColour(firstColour.getBlue(),firstColour.getGreen(),firstColour.getRed());
-        float createSecondColour = secondColour.makeColour(secondColour.getBlueBitDecimal(),secondColour.getGreenBitDecimal(),secondColour.getRedBitDecimal());
-        assertEquals(createSecondColour,createFirstColour);
+        //create instance of 3 parameter Colour object with 3 float parameters as input
+        Colour firstColour = new Colour(0.007843138f,0.96862745f,0.5921569f);
+        //create instance of 1 parameter Colour object with binary string input
+        Colour secondColour = new Colour("100101111111011100000010");
+        //colours should be equal
+        assertEquals(firstColour.getBlue(),secondColour.getBlueBitDecimal());
+        assertEquals(firstColour.getGreen(),secondColour.getGreenBitDecimal());
+        assertEquals(firstColour.getRed(),secondColour.getRedBitDecimal());
     }
 
 }
