@@ -16,15 +16,15 @@ component in bits 0-7
  */
 
 public class Colour {
-    private float red;
-    private float green;
-    private float blue;
-    private String blueBit;
-    private String greenBit;
-    private String redBit;
-    private float blueBitDecimal;
-    private float greenBitDecimal;
-    private float redBitDecimal;
+    private float red; //red float parameter for 3 parameter constructor
+    private float green; //green float parameter for 3 parameter constructor
+    private float blue; //blue float parameter for 3 parameter constructor
+    private String blueBit; //blue 8 bit binary string accessed from combined RGB string in 1 parameter constructor with a getter
+    private String greenBit; //green 8 bit binary string accessed from combined RGB string in 1 parameter constructor with a getter
+    private String redBit; //red 8 bit binary string accessed from combined RGB string in 1 parameter constructor with a getter
+    private float blueBitDecimal; //blue 8 bit binary string represented as a float
+    private float greenBitDecimal; //green 8 bit binary string represented as a float
+    private float redBitDecimal; //red 8 bit binary string represented as a float
 
 
     /**
@@ -35,17 +35,17 @@ public class Colour {
      * @throws IllegalArgumentException exception thrown to indicate an illegal or unsuitable argument passed to a method
      */
     public Colour(float red, float green, float blue) throws IllegalArgumentException {
-        //test if red float input is between 0.0 and 1.0
+        //test if red float input is between 0.0 and 1.0. If it's not in this range throw IllegalArgumentException
         if (red < 0.0f || red > 1.0f) {
             throw new IllegalArgumentException("Red input must be between 0.0f and 1.0f");
         }
 
-        //test if green float input is between 0.0 and 1.0
+        //test if green float input is between 0.0 and 1.0. If it's not in this range throw IllegalArgumentException
         if (green < 0.0f || green > 1.0f) {
             throw new IllegalArgumentException("Green input must be between 0.0f and 1.0f");
         }
 
-        //test if blue float input is between 0.0 and 1.0
+        //test if blue float input is between 0.0 and 1.0. If it's not in this range throw IllegalArgumentException
         if (blue < 0.0f || blue > 1.0f) {
             throw new IllegalArgumentException("Blue input must be between 0.0f and 1.0f");
         }
@@ -67,10 +67,11 @@ public class Colour {
      * @throws IllegalArgumentException exception thrown to indicate an illegal or unsuitable argument passed to a method
      */
     public Colour(String combinedRGB) throws IllegalArgumentException {
-        //checks that length of rgb is 24
+        //throws exception if combined RGB length is not 24
         if (combinedRGB.length() != 24) {
             throw new IllegalArgumentException("RGB length not 24");
         }
+        //throws exception if combined RGB bit values aren't 1s or 0s by calling function validBit
         if (!validBit(combinedRGB)) {
             throw new IllegalArgumentException("RGB values must be 1 or 0");
         }
@@ -156,7 +157,9 @@ public class Colour {
      * @return boolean
      */
     boolean validBit(String bitString) {
+        //converts bitString to char array
         char[] binary = bitString.toCharArray();
+        //iterates through array and checks values
         for (char bitValue : binary) {
             if (bitValue == '1' || bitValue == '0') {
                 return (true);
