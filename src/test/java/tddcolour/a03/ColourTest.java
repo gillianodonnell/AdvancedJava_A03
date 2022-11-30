@@ -47,7 +47,7 @@ public class ColourTest {
      * Unit test to test that an exception is thrown when red float parameter isn't a float
      */
     @Test
-    @DisplayName("Red input must be between 0.0 and 1.0")
+    @DisplayName("Red input must be between 0.0 and 1.0. IllegalArgumentException should be thrown")
     void testExpectedExceptionForRedFloatRange(){
         //IllegalArgumentException should be thrown
        assertThrows(IllegalArgumentException.class, () -> {
@@ -61,7 +61,7 @@ public class ColourTest {
      * Unit test to test that an exception is thrown when green float parameter isn't a float
      */
     @Test
-    @DisplayName("Green input must be between 0.0 and 1.0")
+    @DisplayName("Green input must be between 0.0 and 1.0. IllegalArgumentException should be thrown")
     void testExpectedExceptionForGreenFloatRange(){
         assertThrows(IllegalArgumentException.class, () -> {
             //create instance of 3 parameter Colour object
@@ -74,7 +74,7 @@ public class ColourTest {
      * Unit test to test that an exception is thrown when blue float parameter isn't a float
      */
     @Test
-    @DisplayName("Blue input must be between 0.0 and 1.0")
+    @DisplayName("Blue input must be between 0.0 and 1.0. IllegalArgumentException should be thrown")
     void testExpectedExceptionForBlueFloatRange(){
         //using lambda function
         assertThrows(IllegalArgumentException.class, () -> {
@@ -137,7 +137,7 @@ public class ColourTest {
      * Unit test to test that blue bit values are now represented as a float
      */
     @Test
-    @DisplayName("Test that blue is now a decimal")
+    @DisplayName("Test that blue bit values are now represented as a float")
     void testBlueBitDecimal(){
         //create instance of 1 parameter Colour object with binary string input
         Colour testColour = new Colour("100101111111111100000000");
@@ -171,7 +171,7 @@ public class ColourTest {
      * Should throw IllegalArgumentException
      */
     @Test
-    @DisplayName("Test that all characters in combined rgb are 0 or 1")
+    @DisplayName("Test that all string bit values in combined rgb are 0 or 1. Should throw IllegalArgumentException")
     void testCombinedRGBBitValues(){
         assertThrows(IllegalArgumentException.class, () -> {
             //create instance of 1 parameter Colour object with binary string input
@@ -209,7 +209,7 @@ public class ColourTest {
      * similar binary string with equal ranges in different order
      */
     @Test
-    @DisplayName("Test if the two constructors make the same colour using makeColour method")
+    @DisplayName("Test if the two constructors make the same colour")
     void testEqualColoursEqualDifferentConstructors(){
         //create instance of 3 parameter Colour object with 3 float parameters as input
         Colour firstColour = new Colour(0.007843138f,0.96862745f,0.5921569f);
