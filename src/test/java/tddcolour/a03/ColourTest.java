@@ -2,12 +2,17 @@ package tddcolour.a03;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test class for Colour Class
+ */
 public class ColourTest {
 
+    /**
+     * Unit test to check that the red input parameter is a float
+     */
     @Test
     @DisplayName("Check that red parameter is a float")
     void newColourRedIsFloat(){
@@ -15,6 +20,9 @@ public class ColourTest {
         assertEquals(0.81f, testColour.getRed());
     }
 
+    /**
+     * Unit test to check that the green input parameter is a float
+     */
     @Test
     @DisplayName("Check that green parameter is a float")
     void newColourGreenIsFloat(){
@@ -22,6 +30,9 @@ public class ColourTest {
         assertEquals(0.52f, testColour.getGreen());
     }
 
+    /**
+     * Unit test to check that the blue input parameter is a float
+     */
     @Test
     @DisplayName("Check that blue parameter is a float")
     void newColourBlueIsFloat(){
@@ -29,6 +40,9 @@ public class ColourTest {
         assertEquals(0.43f, testColour.getBlue());
     }
 
+    /**
+     * Unit test to test that an exception is thrown when red float parameter isn't a float
+     */
     @Test
     @DisplayName("Red input must be between 0.0 and 1.0")
     void testExpectedExceptionForRedFloatRange(){
@@ -38,6 +52,9 @@ public class ColourTest {
 
     }
 
+    /**
+     * Unit test to test that an exception is thrown when green float parameter isn't a float
+     */
     @Test
     @DisplayName("Green input must be between 0.0 and 1.0")
     void testExpectedExceptionForGreenFloatRange(){
@@ -50,6 +67,9 @@ public class ColourTest {
 
     }
 
+    /**
+     * Unit test to test that an exception is thrown when blue float parameter isn't a float
+     */
     @Test
     @DisplayName("Blue input must be between 0.0 and 1.0")
     void testExpectedExceptionForBlueFloatRange(){
@@ -62,6 +82,10 @@ public class ColourTest {
 
     }
 
+    /**
+     * Unit test to test that the length of the combined rgb is of length 24
+     * It should be of length 24 because each red,green and blue bit range is 8
+     */
     @Test
     @DisplayName("String RGB input should be of length 24")
     void testRGBLength(){
@@ -73,6 +97,10 @@ public class ColourTest {
         });
     }
 
+    /**
+     * Unit test to test that the length of the blue bit range is 8
+     * It should be of length 24 because each red,green and blue bit range is 8
+     */
     @Test
     @DisplayName("Test blueBit is first 8 bits")
     void testBlueBit(){
@@ -80,6 +108,10 @@ public class ColourTest {
         assertEquals(testColour.getBlueBit(), "00000000");
     }
 
+    /**
+     * Unit test to test that the length of the green bit range is 8
+     * It should be of length 24 because each red,green and blue bit range is 8
+     */
     @Test
     @DisplayName("Test greenBit is middle 8 bits")
     void testGreenBit(){
@@ -87,6 +119,10 @@ public class ColourTest {
         assertEquals(testColour.getGreenBit(), "11111111");
     }
 
+    /**
+     * Unit test to test that the length of the red bit range is 8
+     * It should be of length 24 because each red,green and blue bit range is 8
+     */
     @Test
     @DisplayName("Test redBit is last 8 bits")
     void testRedBit(){
@@ -94,6 +130,9 @@ public class ColourTest {
         assertEquals(testColour.getRedBit(), "00000000");
     }
 
+    /**
+     * Unit test to test that blue bit values are now represented as a float
+     */
     @Test
     @DisplayName("Test that blue is now a decimal")
     void testBlueBitDecimal(){
@@ -101,6 +140,32 @@ public class ColourTest {
         assertEquals(testColour.getBlueBitDecimal(),0.5921569f);
     }
 
+    /**
+     * Unit test to test that green bit values are now represented as a float
+     */
+    @Test
+    @DisplayName("Test that green bit values are now represented as a float")
+    void testGreenBitDecimal(){
+        //create instance of 1 parameter Colour object with binary string input
+        Colour testColour = new Colour("100101111111111100000000");
+        assertEquals(testColour.getGreenBitDecimal(),1.0f);
+    }
+
+    /**
+     * Unit test to test that red bit values are now represented as a float
+     */
+    @Test
+    @DisplayName("Test that red bit values are now represented as a float")
+    void testRedBitDecimal(){
+        //create instance of 1 parameter Colour object with binary string input
+        Colour testColour = new Colour("100101111111111100000000");
+        assertEquals(testColour.getRedBitDecimal(),0.0f);
+    }
+
+    /**
+     * Unit test to test that all characters in binary string in combined rgb are either 0 or 1
+     * Should throw IllegalArgumentException
+     */
     @Test
     @DisplayName("Test that all characters in combined rgb are 0 or 1")
     void testCombinedRGBBitValues(){
@@ -112,20 +177,9 @@ public class ColourTest {
         });
     }
 
-    @Test
-    @DisplayName("Test that green bit is now a decimal")
-    void testGreenBitDecimal(){
-        Colour testColour = new Colour("100101111111111100000000");
-        assertEquals(testColour.getGreenBitDecimal(),1.0f);
-    }
-
-    @Test
-    @DisplayName("Test that red bit is now a decimal")
-    void testRedBitDecimal(){
-        Colour testColour = new Colour("100101111111111100000000");
-        assertEquals(testColour.getRedBitDecimal(),0.0f);
-    }
-
+    /**
+     * Test if the colours are equal; compare component values
+     */
     @Test
     @DisplayName("Test if the colours are equal when inputted same bit string")
     void testEqualColours(){
@@ -143,23 +197,11 @@ public class ColourTest {
 
     }
 
-    @Test
-    @DisplayName("Test if the colours are equal when inputted same bit values but in different order")
-    void testEqualColoursEqualDifferentOrder(){
-        Colour firstColour = new Colour("000000001001011111111111"); //10010111 //11111111
-        Colour secondColour = new Colour("100101111111111100000000");
-        float firstBlueColour = firstColour.getBlueBitDecimal();
-        float firstGreenColour = firstColour.getGreenBitDecimal();
-        float firstRedColour = firstColour.getRedBitDecimal();
-        float firstColourFloat = firstBlueColour * firstGreenColour * firstRedColour;
-        float secondBlueColour = secondColour.getBlueBitDecimal();
-        float secondGreenColour = secondColour.getGreenBitDecimal();
-        float secondRedColour = secondColour.getRedBitDecimal();
-        float secondColourFloat = secondRedColour * secondBlueColour * secondGreenColour;
-        assertEquals(firstColourFloat,secondColourFloat);
-
-    }
-
+    /**
+     * Unit test to test that both constructors make the same colour
+     * Test if the colours are equal
+     * similar binary string with equal ranges in different order
+     */
     @Test
     @DisplayName("Test if the two constructors make the same colour using makeColour method")
     void testEqualColoursEqualDifferentConstructors(){
