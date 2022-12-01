@@ -28,25 +28,17 @@ public class ColourTest {
     }
 
     /**
-     * Unit test to check that the green input parameter is a float
+     * Unit test to check that each input parameter in 3 parameter constructor for Colour object is a float
      */
     @Test
-    @DisplayName("Check that green parameter is a float")
-    void newColourGreenIsFloat(){
-        //create instance of 3 parameter Colour object
-        Colour testColour = new Colour(0.81f,0.52f,0.43f);
-        assertEquals(0.52f, testColour.getGreen());
-    }
-
-    /**
-     * Unit test to check that the blue input parameter is a float
-     */
-    @Test
-    @DisplayName("Check that blue parameter is a float")
-    void newColourBlueIsFloat(){
-        //create instance of 3 parameter Colour object
-        Colour testColour = new Colour(0.81f,0.52f,0.43f);
-        assertEquals(0.43f, testColour.getBlue());
+    @DisplayName("Check that each input parameter is a float")
+    void firstTestColourInputsShouldBeFloats(){
+        //test that red input value is a float
+        assertEquals(0.81f, firstTestColourThreeParameter.getRed());
+        //test that green input value is a float
+        assertEquals(0.52f, firstTestColourThreeParameter.getGreen());
+        //test that blue input value is a float
+        assertEquals(0.43f, firstTestColourThreeParameter.getBlue());
     }
 
     /**
