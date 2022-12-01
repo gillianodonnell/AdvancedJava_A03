@@ -91,7 +91,7 @@ public class ColourTest {
         //Anonymous new Executable() was replaced with lambda
         assertThrows(IllegalArgumentException.class, () -> {
             //create instance of 1 parameter Colour object with binary string input
-            Colour testColour = new Colour("10010101");
+            new Colour("10010101");
         });
     }
 
