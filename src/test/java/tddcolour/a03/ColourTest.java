@@ -104,7 +104,8 @@ public class ColourTest {
     void testCombinedRGBBitValues(){
         assertThrows(IllegalArgumentException.class, () -> {
             //create instance of 1 parameter Colour object with binary string input
-            Colour testColour = new Colour("222222222222222364738973");
+            //should throw illegal argument exception
+            new Colour("222222222222222364738973");
         });
     }
 
@@ -114,27 +115,19 @@ public class ColourTest {
     @Test
     @DisplayName("Test that all string bit values in combined rgb are 0 or 1.")
     void testValidCombinedRGBBitValues(){
-        //create instance of 1 parameter Colour object with binary string input
-        Colour testColour = new Colour("100101111111111100000011");
-        assertTrue(testColour.validBit("100101111111111100000011"));
+        assertTrue(firstTestColourOneParameter.validBit("100101111111111100000011"));
     }
 
     /**
      * Test if the colours are equal; compare component values
      */
     @Test
-    @DisplayName("Test if the colours are equal when inputted similar binary string with equal ranges in different order")
-    void testEqualColoursBitsInDifferentOrder(){
-        //create first instance of 1 parameter Colour object with binary string input
-        //first combined rgb given as a binary string
-        Colour firstColour = new Colour("100101111111111100000011");
-        //create second instance of 1 parameter Colour object with binary string input
-        //first combined rgb given as a binary string with same 8 bit ranges but in different order
-        Colour secondColour = new Colour("100101111111111100000011");
+    @DisplayName("Test if the colours are equal when inputted binary string with equal ranges in same order")
+    void testEqualColoursBitsUsingSameConstructorByComparingComponentValues(){
         //colours should be equal as they have the same components
-        assertEquals(firstColour.getBlueBitDecimal(),secondColour.getBlueBitDecimal());
-        assertEquals(firstColour.getGreenBitDecimal(),secondColour.getGreenBitDecimal());
-        assertEquals(firstColour.getRedBitDecimal(),secondColour.getRedBitDecimal());
+        assertEquals(secondTestColourOneParameter.getBlueBitDecimal(), firstTestColourOneParameter.getBlueBitDecimal());
+        assertEquals(secondTestColourOneParameter.getGreenBitDecimal(), firstTestColourOneParameter.getGreenBitDecimal());
+        assertEquals(secondTestColourOneParameter.getRedBitDecimal(), firstTestColourOneParameter.getRedBitDecimal());
 
     }
 
