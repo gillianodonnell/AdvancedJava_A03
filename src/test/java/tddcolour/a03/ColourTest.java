@@ -134,19 +134,14 @@ public class ColourTest {
     /**
      * Unit test to test that both constructors make the same colour
      * Test if the colours are equal
-     * similar binary string with equal ranges in different order
      */
     @Test
     @DisplayName("Test if the two constructors make the same colour")
     void testEqualColoursEqualDifferentConstructors(){
-        //create instance of 3 parameter Colour object with 3 float parameters as input
-        Colour firstColour = new Colour(0.007843138f,0.96862745f,0.5921569f);
-        //create instance of 1 parameter Colour object with binary string input
-        Colour secondColour = new Colour("100101111111011100000010");
         //colours should be equal
-        assertEquals(firstColour.getBlue(),secondColour.getBlueBitDecimal());
-        assertEquals(firstColour.getGreen(),secondColour.getGreenBitDecimal());
-        assertEquals(firstColour.getRed(),secondColour.getRedBitDecimal());
+        assertEquals(secondTestColourThreeParameter.getBlue(), secondTestColourOneParameter.getBlueBitDecimal());
+        assertEquals(secondTestColourThreeParameter.getGreen(), secondTestColourOneParameter.getGreenBitDecimal());
+        assertEquals(secondTestColourThreeParameter.getRed(), secondTestColourOneParameter.getRedBitDecimal());
     }
 
 }
