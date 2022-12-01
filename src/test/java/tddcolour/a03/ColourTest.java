@@ -96,39 +96,16 @@ public class ColourTest {
     }
 
     /**
-     * Unit test to test that the length of the blue bit range is 8
-     * It should be of length 24 because each red,green and blue bit range is 8
+     * Unit test to test that the length of the each bit range is 8
+     * It should be of length 24 because each red, green, and blue bit range is 8
      */
     @Test
-    @DisplayName("Test blueBit is first 8 bits")
+    @DisplayName("Test that combined string assigned 8 bits to each blue, green and red value in the correct order")
     void testBlueBit(){
-        //create instance of 1 parameter Colour object with binary string input
-        Colour testColour = new Colour("000000001111111100000000");
-        assertEquals(testColour.getBlueBit(), "00000000");
-    }
+        assertEquals(firstTestColourOneParameter.getBlueBit(), "10010111");
+        assertEquals(firstTestColourOneParameter.getGreenBit(), "11111111");
+        assertEquals(firstTestColourOneParameter.getRedBit(), "00000000");
 
-    /**
-     * Unit test to test that the length of the green bit range is 8
-     * It should be of length 24 because each red,green and blue bit range is 8
-     */
-    @Test
-    @DisplayName("Test greenBit is middle 8 bits")
-    void testGreenBit(){
-        //create instance of 1 parameter Colour object with binary string input
-        Colour testColour = new Colour("000000001111111100000000");
-        assertEquals(testColour.getGreenBit(), "11111111");
-    }
-
-    /**
-     * Unit test to test that the length of the red bit range is 8
-     * It should be of length 24 because each red,green and blue bit range is 8
-     */
-    @Test
-    @DisplayName("Test redBit is last 8 bits")
-    void testRedBit(){
-        //create instance of 1 parameter Colour object with binary string input
-        Colour testColour = new Colour("000000001111111100000000");
-        assertEquals(testColour.getRedBit(), "00000000");
     }
 
     /**
