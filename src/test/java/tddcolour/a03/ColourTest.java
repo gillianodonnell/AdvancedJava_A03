@@ -10,16 +10,21 @@ import static org.junit.jupiter.api.Assertions.*;
  * Test class for Colour Class
  */
 public class ColourTest {
+    Colour firstTestColourThreeParameter;
+    Colour firstTestColourOneParameter;
+    Colour secondTestColourOneParameter;
+    Colour secondTestColourThreeParameter;
 
-    /**
-     * Unit test to check that the red input parameter is a float
-     */
-    @Test
-    @DisplayName("Check that red parameter is a float")
-    void newColourRedIsFloat(){
-        //create instance of 3 parameter Colour object
-        Colour testColour = new Colour(0.81f,0.52f,0.43f);
-        assertEquals(0.81f, testColour.getRed());
+
+
+    @BeforeEach
+    void setUp() {
+        //create instance of 3 parameter Colour object used for testing input parameters are floats
+        firstTestColourThreeParameter = new Colour(0.81f,0.52f,0.43f);
+        secondTestColourThreeParameter = new Colour(0.0f,1.0f,0.5921569f);
+        //create instance of 1 parameter Colour object with binary string input
+        firstTestColourOneParameter = new Colour("100101111111111100000000");
+        secondTestColourOneParameter = new Colour("100101111111111100000000");
     }
 
     /**
