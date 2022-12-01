@@ -56,32 +56,6 @@ public class ColourTest {
     }
 
     /**
-     * Unit test to test that an exception is thrown when green float parameter isn't a float
-     */
-    @Test
-    @DisplayName("Green input must be between 0.0 and 1.0. IllegalArgumentException should be thrown")
-    void testExpectedExceptionForGreenFloatRange(){
-        assertThrows(IllegalArgumentException.class, () -> {
-            //create instance of 3 parameter Colour object
-            Colour colour = new Colour(.6f,8,.5f);
-        });
-
-    }
-
-    /**
-     * Unit test to test that an exception is thrown when blue float parameter isn't a float
-     */
-    @Test
-    @DisplayName("Blue input must be between 0.0 and 1.0. IllegalArgumentException should be thrown")
-    void testExpectedExceptionForBlueFloatRange(){
-        //using lambda function
-        assertThrows(IllegalArgumentException.class, () -> {
-            //create instance of 3 parameter Colour object
-            Colour colour = new Colour(.6f,.8f,9);
-        });
-    }
-
-    /**
      * Unit test to test that the length of the combined rgb is of length 24
      * It should be of length 24 because each red,green and blue bit range is 8
      */
@@ -109,42 +83,22 @@ public class ColourTest {
     }
 
     /**
-     * Unit test to test that blue bit values are now represented as a float
+     * Unit test to test that red, green and blue binary strings are now represented as a float
      */
     @Test
     @DisplayName("Test that blue bit values are now represented as a float")
     void testBlueBitDecimal(){
-        //create instance of 1 parameter Colour object with binary string input
-        Colour testColour = new Colour("100101111111111100000000");
-        assertEquals(testColour.getBlueBitDecimal(),0.5921569f);
-    }
+        assertEquals(firstTestColourOneParameter.getBlueBitDecimal(),0.5921569f);
+        assertEquals(firstTestColourOneParameter.getGreenBitDecimal(),1.0f);
+        assertEquals(firstTestColourOneParameter.getRedBitDecimal(),0.0f);
 
-    /**
-     * Unit test to test that green bit values are now represented as a float
-     */
-    @Test
-    @DisplayName("Test that green bit values are now represented as a float")
-    void testGreenBitDecimal(){
-        //create instance of 1 parameter Colour object with binary string input
-        Colour testColour = new Colour("100101111111111100000000");
-        assertEquals(testColour.getGreenBitDecimal(),1.0f);
-    }
-
-    /**
-     * Unit test to test that red bit values are now represented as a float
-     */
-    @Test
-    @DisplayName("Test that red bit values are now represented as a float")
-    void testRedBitDecimal(){
-        //create instance of 1 parameter Colour object with binary string input
-        Colour testColour = new Colour("100101111111111100000000");
-        assertEquals(testColour.getRedBitDecimal(),0.0f);
     }
 
     /**
      * Unit test to test that all characters in binary string in combined rgb are either 0 or 1
      * Should throw IllegalArgumentException
      */
+
     @Test
     @DisplayName("Test that all string bit values in combined rgb are 0 or 1. Should throw IllegalArgumentException")
     void testCombinedRGBBitValues(){
