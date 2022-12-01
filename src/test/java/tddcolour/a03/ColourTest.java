@@ -45,12 +45,12 @@ public class ColourTest {
      * Unit test to test that an exception is thrown when red float parameter isn't a float
      */
     @Test
-    @DisplayName("Red input must be between 0.0 and 1.0. IllegalArgumentException should be thrown")
-    void testExpectedExceptionForRedFloatRange(){
+    @DisplayName("Each input must be between 0.0 and 1.0. IllegalArgumentException should be thrown")
+    void testExpectedExceptionForInputFloatRange(){
         //IllegalArgumentException should be thrown
        assertThrows(IllegalArgumentException.class, () -> {
            //create instance of 3 parameter Colour object
-           Colour colour = new Colour(5,0.4f,.5f);
+           new Colour(5,2,8.0f);
        });
 
     }
